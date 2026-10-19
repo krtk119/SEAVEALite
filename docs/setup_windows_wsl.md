@@ -219,6 +219,8 @@ fabsim localhost flee_init_SA:mali2012
 fabsim localhost fetch_results
 ```
 
+This runs 9 Flee simulations one after another (2 uncertain parameters, polynomial order 2), so it takes a while: about 23 minutes on a laptop with the default simulation period. For a quicker check, use `fabsim localhost flee_init_SA:mali2012,simulation_period=30` (about 5 minutes), as the notebook does.
+
 Check generated runs:
 
 ```bash
