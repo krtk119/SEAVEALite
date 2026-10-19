@@ -261,7 +261,7 @@ explorer.exe .
 You can open the FabFlee sensitivity-analysis output folder using:
 
 ```bash
-explorer.exe ~/seavea/FabSim3/plugins/FabFlee/SA/flee_SA_SCSampler_mali2012/
+explorer.exe "$(wslpath -w ~/seavea/FabSim3/plugins/FabFlee/SA/flee_SA_SCSampler_mali2012/)"
 ```
 
 ## Troubleshooting
