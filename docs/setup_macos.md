@@ -6,7 +6,7 @@ Recommended environment:
 
 - macOS with Terminal
 - Homebrew
-- Python 3.10 or newer
+- Python 3.11 (3.10 and 3.12 also work; 3.13 and newer are not supported by the pinned `numpy` and `scipy` versions)
 - Git
 - OpenSSH
 
@@ -28,7 +28,8 @@ brew install git python openssh
 Check Python:
 
 ```bash
-python3 --version
+brew install python@3.11
+python3.11 --version
 ```
 
 ## 2. Enable SSH localhost
@@ -67,7 +68,7 @@ cd SEAVEA-notebooks
 ## 4. Create the notebook environment
 
 ```bash
-python3 -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip wheel "setuptools<70"
 pip install -r requirements.txt
@@ -80,7 +81,7 @@ python -m ipykernel install --user --name seavea-notebooks --display-name "SEAVE
 cd ~/seavea
 git clone https://github.com/djgroen/FabSim3.git
 cd FabSim3
-python3 -m venv VirtualEnv
+python3.11 -m venv VirtualEnv
 source VirtualEnv/bin/activate
 python configure_fabsim.py
 ln -sf ~/seavea/FabSim3/fabsim/bin/fabsim ~/seavea/FabSim3/VirtualEnv/bin/fabsim
@@ -240,10 +241,10 @@ raw[Total error].png
 
 ## Troubleshooting
 
-If `python3 -m venv` fails, reinstall Python using Homebrew:
+If `python3.11 -m venv` fails, reinstall Python 3.11 using Homebrew:
 
 ```bash
-brew reinstall python
+brew reinstall python@3.11
 ```
 
 If SSH localhost fails, enable Remote Login in macOS Sharing settings.

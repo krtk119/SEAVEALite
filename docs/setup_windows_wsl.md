@@ -36,7 +36,16 @@ sudo apt upgrade -y
 Install required packages:
 
 ```bash
-sudo apt install -y git python3 python3-venv python3-pip openssh-client openssh-server build-essential
+sudo apt install -y git python3 python3-venv python3-pip openssh-client openssh-server build-essential software-properties-common
+```
+
+The tutorial needs Python 3.10, 3.11 or 3.12, because the pinned `numpy` and `scipy` versions have no ready-made packages for newer Python (Ubuntu 26.04 ships Python 3.14). Install Python 3.11 alongside the system Python:
+
+```bash
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install -y python3.11 python3.11-venv
+python3.11 --version
 ```
 
 Start SSH:
@@ -69,7 +78,7 @@ cd SEAVEA-notebooks
 ## 4. Create the notebook environment
 
 ```bash
-python3 -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip wheel "setuptools<70"
 pip install -r requirements.txt
@@ -82,7 +91,7 @@ python -m ipykernel install --user --name seavea-notebooks --display-name "SEAVE
 cd ~/seavea
 git clone https://github.com/djgroen/FabSim3.git
 cd FabSim3
-python3 -m venv VirtualEnv
+python3.11 -m venv VirtualEnv
 source VirtualEnv/bin/activate
 python configure_fabsim.py
 ln -sf ~/seavea/FabSim3/fabsim/bin/fabsim ~/seavea/FabSim3/VirtualEnv/bin/fabsim
@@ -256,11 +265,11 @@ explorer.exe ~/seavea/FabSim3/plugins/FabFlee/SA/flee_SA_SCSampler_mali2012/
 
 ## Troubleshooting
 
-If WSL cannot find `python3-venv`, run:
+If `python3.11 -m venv` fails with an `ensurepip` error, run:
 
 ```bash
 sudo apt update
-sudo apt install -y python3-venv
+sudo apt install -y python3.11-venv
 ```
 
 If SSH localhost fails:
