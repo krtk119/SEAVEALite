@@ -30,8 +30,9 @@ Inside the Ubuntu terminal:
 
 ```bash
 sudo apt update
-sudo apt upgrade -y
 ```
+
+Optionally, `sudo apt upgrade -y` updates every installed package. The tutorial does not need it, and on an existing WSL install it can take a long time.
 
 Install required packages:
 
