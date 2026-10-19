@@ -75,6 +75,8 @@ python configure_fabsim.py
 ln -sf ~/seavea/FabSim3/fabsim/bin/fabsim ~/seavea/FabSim3/VirtualEnv/bin/fabsim
 ```
 
+`configure_fabsim.py` adds an `export FABSIM3_HOME=...` line to your `~/.bashrc`, so new terminals will use this FabSim3. If you already have another FabSim3 installation, back up `~/.bashrc` first and restore it afterwards if needed.
+
 Check FabSim3:
 
 ```bash
